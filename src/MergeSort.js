@@ -11,6 +11,7 @@ function MergeSort() {
   const [xAxis, setxAxis] = useState([]);
   const [sortingInProgress, setSortingInProgress] = useState(false);
   const [gradientColor, setGradientColor] = useState("#3f3f3f");
+  const [borderColor, setBorderColor] = useState("#ff6b6b");
 
   const handleInputChange = (e) => {
     setVal(e.target.value);
@@ -74,6 +75,20 @@ function MergeSort() {
     setSortingInProgress(false);
   };
 
+  const handleMouseMove = (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    const darkColor = "#3f3f3f";
+    const gradientColor = `rgb(${Math.round(y * 255)}, ${Math.round(
+      y * 255
+    )}, ${Math.round(y * 255)})`;
+    const borderColor = `rgb(${Math.round(x * 255)}, ${Math.round(
+      x * 255
+    )}, ${Math.round(x * 255)})`;
+    setGradientColor(gradientColor);
+    setBorderColor(borderColor);
+  };
+
   return (
     <div
       style={{
@@ -85,6 +100,7 @@ function MergeSort() {
         alignItems: "center",
         minHeight: "91.3vh",
       }}
+      onMouseMove={handleMouseMove}
     >
       <div
         className="container"
@@ -93,6 +109,7 @@ function MergeSort() {
           padding: "20px",
           margin: "10px",
           background: "#ffffff",
+          boxShadow: `0 0 20px 10px ${borderColor}`,
           borderRadius: "10px",
 
           maxWidth: "600px",

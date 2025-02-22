@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BubbleSort from "./BubbleSort";
-import MergeSort from "./MergeSort";
-import QuickSort from "./QuickSort";
-import Main from "./Main";
-import Footer from "./Footer";
+import BubbleSort from "./Components/BubbleSort";
+import MergeSort from "./Components/MergeSort";
+import QuickSort from "./Components/QuickSort";
+import Main from "./Components/Main";
+import Footer from "./Components/Footer";
 
 function App() {
   return (

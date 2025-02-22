@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from "victory";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { Parallax } from "react-parallax";
 
 function BubbleSort() {
   const [Val, setVal] = useState("");
